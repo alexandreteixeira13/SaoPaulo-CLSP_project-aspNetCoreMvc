@@ -1,0 +1,73 @@
+﻿@model IEnumerable<CLSP_Asp.Models.Cidade>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="gap"></div>
+
+<div class="container">
+    <div class="text-center" id="cidadeRisco">
+        <h2>Cidades com Maior Risco</h2>
+    </div>
+
+    <div class="gap">
+    </div>
+    <div class="carrossel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i" class="@(i == 0 ? "active" : "")" aria-current="@(i == 0 ? "true" : "false")" aria-label="Slide @i"></button>
+                }
+            </div>
+            <div class="carousel-inner">
+                @foreach (var cidade in Model.Select((value, index) => new { value, index }))
+                {
+                    <div class="carousel-item @(cidade.index == 0 ? "active" : "")">
+                        <img src="@Url.Content(cidade.value.ImagePath)" class="d-block w-100" alt="@cidade.value.Name">
+                        <div class="carousel-caption d-none d-md-block" id="risco">
+                            <h5>@cidade.value.Name</h5>
+                            <div>
+                                <p>Nível de risco: <b id="nivel">@cidade.value.NivelDeRisco</b></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                }
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mt-5" id="erosaoSec">
+        <h3>O que é Erosão Costeira?</h3>
+        <p>
+            A erosão costeira é um processo natural que ocorre nas áreas costeiras devido à ação das ondas, correntes e ventos.
+            É um fenômeno que resulta na perda gradual de terra e sedimentos das praias, falésias e dunas, levando à diminuição
+            do tamanho das praias e à destruição de estruturas na costa, incluindo casas, estradas, comércios, hotéis etc.
+        </p>
+        <div class="erosionImage">
+            <img src="/images/erosao-costeira.jpg" class="img-fluid" alt="Erosão Costeira" id="ErosaoImage">
+        </div>
+        
+    </div>
+
+    <div class="mt-5" id="mapSec">
+        <h3>Mapa de Risco</h3>
+        <p>Confira na imagem abaixo o mapa com as principais áreas de risco.</p>
+        <img src="/images/mapa-risco.jpg" class="img-fluid" alt="Mapa de Risco">
+    </div>
+    >
+
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

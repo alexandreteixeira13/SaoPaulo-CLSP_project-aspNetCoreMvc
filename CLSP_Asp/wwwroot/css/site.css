@@ -1,0 +1,143 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f8f9fa;
+}
+
+.gap{
+    height: 30px
+}
+
+#cidadeRisco h2{
+    font-size: 5rem;
+    font-family: Inter;
+    font-weight:bold;
+    margin-bottom: 3rem;
+}
+
+#risco{
+    font-size: 5rem;
+}
+
+#risco h5{
+    margin-bottom: 10rem;
+    font-size: 8rem
+}
+
+#nivel{
+    color:darkred
+}
+
+#erosaoSec h3{
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-left: 20px solid #007bff;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight:bold;
+    margin-top: 6rem;
+}
+
+#erosaoSec p {
+    font-family: Inter;
+    font-size: 25px;
+    font-weight:600;
+    margin-top: 2rem;
+}
+
+#mapSec h3 {
+    margin-top: 4rem;
+    font-size: 50px;
+    font-family: Inter;
+    font-weight: bold;
+    text-align: center;
+}
+
+#mapSec p{
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.carousel slide {
+    height: 560px;
+    width: 1000px;
+    text-align: center;
+}
+
+.carrossel{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-brand {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.form-inline input {
+    width: 200px;
+}
+
+.navbar-nav{
+    margin-left: 1rem;
+    gap: 10px
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 1.2rem;
+
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    font-weight: bold;
+}
+
+#navbarMain {
+    background-color: rgba(19, 97, 154, 1);
+    height: 100px;
+    padding-left: 3rem;
+}
+
+#formSearch{
+    margin-left: 78rem;
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+.erosionImage img {
+    position:center;
+}
+
+#ErosaoImage{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 75%
+}
